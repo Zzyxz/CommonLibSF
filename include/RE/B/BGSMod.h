@@ -75,7 +75,7 @@ namespace RE::BGSMod
 					{
 						std::int32_t value1;
 						std::int32_t value2;
-						void* pad;
+						void*        pad;
 					};
 
 					struct ValueType4FormFloat
@@ -84,7 +84,7 @@ namespace RE::BGSMod
 						float        value2;
 					};
 
-					union // 0
+					union  // 0
 					{
 						ValueType1Bool      type1Val;
 						ValueType2Float     type2Val;
@@ -92,21 +92,20 @@ namespace RE::BGSMod
 						ValueType4FormFloat type4Val;
 					};
 
-					std::uint8_t  type;       // 10
-					std::uint8_t  pad[7];     // 11
-					std::uint32_t propertyID; // 18
-					std::uint32_t pad2;       // 18
-					// std::uint64_t pad2;
-					// float         pad2;
-					// float Value1;
-					// float Value2;
+
+					std::uint8_t  type;        // 10
+					std::uint8_t  pad[7];      // 11
+					std::uint32_t propertyID;  // 18
+					std::uint32_t pad2;        // 18
+
 				};
 
 				static_assert(sizeof(Property) == 0x20);
 				static_assert(offsetof(Property, type) == 0x10);
 
-				BSTArray<Include>  includes;   // 00
-				BSTArray<Property> properties; // 10
+				BSTArray<Include>  includes;    // 00
+				BSTArray<Property> properties;  // 10
+
 			};
 
 			static_assert(sizeof(Data) == 0x20);
@@ -131,7 +130,9 @@ namespace RE::BGSMod
 		};
 
 		static_assert(sizeof(Mod) == 0x108);
-	} // namespace Attachment
+
+	}  // namespace Attachment
+
 
 	namespace Template
 	{
